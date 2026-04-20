@@ -1,0 +1,339 @@
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" [class.scrolled]="isScrolled()" id="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <span class="logo-icon">🦈</span>
+      <span class="logo-text">BYD <span class="highlight">SHARK</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero" id="nav-hero">Início</a></li>
+      <li><a href="#invisivel" id="nav-invisivel">Modo Invisível</a></li>
+      <li><a href="#entrega" id="nav-entrega">Entrega VIP</a></li>
+      <li><a href="#specs" id="nav-specs">Especificações</a></li>
+      <li><a href="#cta" class="nav-cta" id="nav-cta">QUERO A MINHA 🔥</a></li>
+    </ul>
+    <button class="mobile-toggle" (click)="toggleMenu()" id="mobile-toggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ========== HERO SECTION ========== -->
+<section class="hero" id="hero">
+  <div class="hero-particles">
+    @for(p of particles(); track $index) {
+      <div class="particle" [style.left.%]="p.x" [style.animationDelay.s]="p.delay" [style.animationDuration.s]="p.duration"></div>
+    }
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-pulse"></span>
+      <span>🚨 LANÇAMENTO EXCLUSIVO 2025</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="title-line">BYD</span>
+      <span class="title-line title-accent">SHARK</span>
+      <span class="title-line title-sub">A caminhonete que <em>ninguém</em> consegue parar</span>
+    </h1>
+    <p class="hero-description">
+      Tecnologia chinesa de ponta com <strong>camuflagem quântica integrada</strong>.
+      Passa em qualquer blitz sem ser detectada. Garantia de invisibilidade ou seu dinheiro de volta*.
+    </p>
+    <div class="hero-actions">
+      <a href="#cta" class="btn btn-primary" id="hero-cta">
+        <span>GARANTIR A MINHA</span>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="#invisivel" class="btn btn-ghost" id="hero-learn">
+        <span>Ver Tecnologia</span>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number" id="stat-blitz">0</span>
+        <span class="stat-label">Blitz evitadas</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Invisibilidade</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">⭐⭐⭐⭐⭐</span>
+        <span class="stat-label">Nota dos fugitivos</span>
+      </div>
+    </div>
+    <p class="hero-disclaimer">*garantia sujeita à disponibilidade do Gusttavo Lima</p>
+  </div>
+  <div class="hero-image">
+    <div class="hero-img-wrapper">
+      <img src="byd-shark-hero.png" alt="BYD Shark - A caminhonete invisível" />
+      <div class="hero-img-glow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MODO INVISÍVEL SECTION ========== -->
+<section class="section-invisible" id="invisivel">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">🔬 TECNOLOGIA EXCLUSIVA</span>
+      <h2 class="section-title">Modo <span class="highlight-gradient">Invisível</span></h2>
+      <p class="section-subtitle">A única caminhonete aprovada pelo Departamento de Sumiço Automotivo</p>
+    </div>
+
+    <div class="invisible-showcase">
+      <div class="showcase-image">
+        <img src="invisible-blitz.png" alt="BYD Shark invisível na blitz" />
+        <div class="image-overlay">
+          <span class="overlay-tag">📸 FLAGRA REAL</span>
+        </div>
+        <div class="opacity-slider">
+          <label>Nível de Invisibilidade:</label>
+          <input type="range" min="0" max="100" [value]="invisibilityLevel()" (input)="onSliderChange($event)" id="invisibility-slider" />
+          <span class="slider-value">{{ invisibilityLevel() }}%</span>
+        </div>
+      </div>
+
+      <div class="showcase-features">
+        <div class="feature-card" id="feature-1">
+          <div class="feature-icon">👻</div>
+          <h3>Camuflagem Quântica</h3>
+          <p>Ativa automaticamente ao detectar radares, blitz ou ex-namorada(o) na rua</p>
+        </div>
+        <div class="feature-card" id="feature-2">
+          <div class="feature-icon">🚫</div>
+          <h3>Anti-Multa</h3>
+          <p>Sistema integrado que apaga a placa dos bancos de dados enquanto você passa</p>
+        </div>
+        <div class="feature-card" id="feature-3">
+          <div class="feature-icon">📡</div>
+          <h3>Detector de Blitz</h3>
+          <p>IA avançada que detecta blitz num raio de 50km e já ativa o sumiço preventivo</p>
+        </div>
+        <div class="feature-card" id="feature-4">
+          <div class="feature-icon">🤫</div>
+          <h3>Modo Silencioso</h3>
+          <p>Motor tão silencioso que nem o cachorro do vizinho percebe você chegando às 3h da manhã</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ENTREGA GUSTTAVO LIMA ========== -->
+<section class="section-delivery" id="entrega">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">🤠 ENTREGA EXCLUSIVA</span>
+      <h2 class="section-title">Entregue pelo <span class="highlight-gold">Gusttavo Lima</span></h2>
+      <p class="section-subtitle">O embaixador que não precisa de embaixada</p>
+    </div>
+
+    <div class="delivery-content">
+      <div class="delivery-image">
+        <img src="gusttavo-delivery.png" alt="Gusttavo Lima entregando sua BYD Shark" />
+        <div class="image-badge">
+          <span>🎤 AO VIVO</span>
+        </div>
+      </div>
+
+      <div class="delivery-info">
+        <div class="delivery-quote">
+          <span class="quote-mark">"</span>
+          <p>Tchau, tchau, multa... Eu vou entregar pessoalmente a caminhonete na sua casa, e ainda canto um sertanejo no portão. É isso aí, parceiro!</p>
+          <span class="quote-author">— Gusttavo Lima, provavelmente</span>
+        </div>
+
+        <div class="delivery-steps">
+          <div class="step" id="step-1">
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <h4>Você faz o pedido</h4>
+              <p>Escolhe a cor (tem preta invisível e preta mais invisível)</p>
+            </div>
+          </div>
+          <div class="step" id="step-2">
+            <div class="step-number">02</div>
+            <div class="step-content">
+              <h4>Gusttavo recebe o alerta</h4>
+              <p>Um pombo-correio premium leva seu pedido até ele (ou WhatsApp, depende do sinal)</p>
+            </div>
+          </div>
+          <div class="step" id="step-3">
+            <div class="step-number">03</div>
+            <div class="step-content">
+              <h4>Ele dirige até sua casa</h4>
+              <p>Cantando "Ficha Limpa" no caminho, sem parar em nenhuma blitz (óbvio)</p>
+            </div>
+          </div>
+          <div class="step" id="step-4">
+            <div class="step-number">04</div>
+            <div class="step-content">
+              <h4>Show exclusivo no portão</h4>
+              <p>30 minutos de sertanejo universitário + churrasco por conta da BYD</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SPECS / COMPARATIVO ========== -->
+<section class="section-specs" id="specs">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">📊 COMPARATIVO TÉCNICO</span>
+      <h2 class="section-title">BYD Shark vs <span class="highlight-gradient">Concorrência</span></h2>
+      <p class="section-subtitle">Spoiler: não tem comparação</p>
+    </div>
+
+    <div class="specs-table">
+      <div class="specs-row specs-header">
+        <div class="spec-label">Recurso</div>
+        <div class="spec-shark">🦈 BYD Shark</div>
+        <div class="spec-other">🥱 Outras</div>
+      </div>
+      <div class="specs-row">
+        <div class="spec-label">Invisibilidade na Blitz</div>
+        <div class="spec-shark"><span class="check">✅</span> Total</div>
+        <div class="spec-other"><span class="cross">❌</span> Nem tenta</div>
+      </div>
+      <div class="specs-row">
+        <div class="spec-label">Entrega pelo Gusttavo Lima</div>
+        <div class="spec-shark"><span class="check">✅</span> Pessoalmente</div>
+        <div class="spec-other"><span class="cross">❌</span> Motoboy comum</div>
+      </div>
+      <div class="specs-row">
+        <div class="spec-label">Show no portão</div>
+        <div class="spec-shark"><span class="check">✅</span> 30min + churrasco</div>
+        <div class="spec-other"><span class="cross">❌</span> Buzina do caminhão</div>
+      </div>
+      <div class="specs-row">
+        <div class="spec-label">Detector de ex</div>
+        <div class="spec-shark"><span class="check">✅</span> IA avançada</div>
+        <div class="spec-other"><span class="cross">❌</span> Não tem</div>
+      </div>
+      <div class="specs-row">
+        <div class="spec-label">Motor silencioso</div>
+        <div class="spec-shark"><span class="check">✅</span> Ninja mode</div>
+        <div class="spec-other"><span class="cross">❌</span> Acorda o bairro</div>
+      </div>
+      <div class="specs-row">
+        <div class="spec-label">Preço</div>
+        <div class="spec-shark"><span class="check">✅</span> Cabe no Pix</div>
+        <div class="spec-other"><span class="cross">❌</span> Vende um rim</div>
+      </div>
+      <div class="specs-row">
+        <div class="spec-label">Ficha</div>
+        <div class="spec-shark"><span class="check">✅</span> Limpa ✨</div>
+        <div class="spec-other"><span class="cross">❌</span> Suja</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DEPOIMENTOS ========== -->
+<section class="section-testimonials" id="depoimentos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">💬 DEPOIMENTOS REAIS*</span>
+      <h2 class="section-title">O que nossos <span class="highlight-gradient">clientes</span> dizem</h2>
+      <p class="section-subtitle">*talvez nem tão reais assim</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card" id="testimonial-1">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Passei por 47 blitz ontem e ninguém me viu. Achei que era um sonho, mas era só a BYD Shark. Recomendo!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👨‍💼</div>
+          <div>
+            <strong>Carlos "Fantasma" Silva</strong>
+            <span>Motorista profissional de fuga</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" id="testimonial-2">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"O Gusttavo Lima entregou minha Shark cantando 'Balada' no meu portão. Minha sogra desmaiou de emoção. Melhor investimento da minha vida."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩‍🦰</div>
+          <div>
+            <strong>Maria "Sertaneja" Santos</strong>
+            <span>Fã nº 1 do Gusttavo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" id="testimonial-3">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"O detector de ex funciona PERFEITAMENTE. A caminhonete sumiu sozinha quando passei perto do shopping. Tecnologia do futuro!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">🧔</div>
+          <div>
+            <strong>João "Sumido" Oliveira</strong>
+            <span>Ex-namorado em fuga desde 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA FINAL ========== -->
+<section class="section-cta" id="cta">
+  <div class="container">
+    <div class="cta-content">
+      <div class="cta-emoji">🦈🔥</div>
+      <h2 class="cta-title">Garanta sua BYD Shark agora!</h2>
+      <p class="cta-subtitle">Antes que ela fique invisível no estoque também</p>
+
+      <div class="cta-price">
+        <span class="price-from">De: <s>R$ 299.990,00</s></span>
+        <span class="price-to">Por: R$ PIX.invisivel,00</span>
+        <span class="price-installment">ou 666x de R$ sumiu,99 no cartão</span>
+      </div>
+
+      <div class="cta-form">
+        <div class="form-group">
+          <input type="text" placeholder="Seu nome (ou codinome de fuga)" class="form-input" id="input-name" />
+        </div>
+        <div class="form-group">
+          <input type="tel" placeholder="WhatsApp (prometo que não é blitz)" class="form-input" id="input-phone" />
+        </div>
+        <button class="btn btn-cta" (click)="onSubmit()" id="btn-submit">
+          <span>🤠 QUERO O GUSTTAVO NA MINHA CASA</span>
+        </button>
+      </div>
+
+      <div class="cta-trust">
+        <span>🔒 Seus dados são tão seguros quanto a Shark na blitz</span>
+        <span>📞 Atendimento 24h (menos quando o Gusttavo tá em show)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="logo-icon">🦈</span>
+        <span>BYD Shark — A revolução invisível</span>
+      </div>
+      <div class="footer-disclaimer">
+        <p>⚠️ AVISO LEGAL: Esta é uma página 100% meme e não tem qualquer vínculo com a BYD, Gusttavo Lima, ou qualquer órgão de trânsito. Não tente ficar invisível numa blitz de verdade. Pague seus impostos. Use cinto de segurança. E se o Gusttavo Lima aparecer na sua casa, é coincidência (ou sorte).</p>
+        <p class="footer-copy">© 2025 BYD Shark Memes LTDA — CNPJ: 00.000.000/MEME-00 — Todos os memes reservados 🦈</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== FLOATING WHATSAPP ========== -->
+<a href="https://wa.me/5500000000000?text=Quero%20minha%20BYD%20Shark%20invisível!" class="floating-whatsapp" target="_blank" id="floating-whatsapp" title="Falar com o Gusttavo">
+  <span class="whatsapp-icon">📱</span>
+  <span class="whatsapp-text">Falar com Gusttavo</span>
+</a>
